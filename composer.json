@@ -21,19 +21,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "iumioFramework\\Setup": "."
+      "iumioFramework\\Setup\\": "."
     }
   },
   "config": {
     "vendor-dir": "public/"
   },
-  "repositories": [
-  {
-    "type": "vcs",
-    "url": "https://github.com/iumio/php-hyper-builtin-server"
-  }
-  ],
-
   "require": {
     "php": ">=7.0.0",
     "iumio/iumio-framework": "0.*"
