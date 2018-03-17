@@ -36,6 +36,6 @@
 
   "require": {
     "php": ">=7.0.0",
-    "iumio/iumio-framework": "0.*",
+    "iumio/iumio-framework": "0.*"
   }
 }
