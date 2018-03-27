@@ -297,6 +297,7 @@ class Tools
 
 /**
  * Check url parameters
+ * @throw \Exception
  */
 if (isset($_REQUEST) && isset($_REQUEST["action"])) {
     if ($_REQUEST["action"] == "phpv") {
