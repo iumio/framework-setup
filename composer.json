@@ -25,10 +25,11 @@
     }
   },
   "config": {
-    "vendor-dir": "public/"
+    "vendor-dir": "../../../public"
   },
   "require": {
     "php": ">=7.0.0",
-    "iumio/iumio-framework": "0.*"
+    "iumio/iumio-framework": "0.*",
+    "composer/installers": "1.5.*"
   }
 }

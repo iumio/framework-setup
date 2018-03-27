@@ -20,11 +20,11 @@ if (isset($f->installation) && $f->installation != null)
     *
     -->
     <title>iumio Framework Installer (FI)</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio_framework/assets/images/favicon.ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio_framework/assets/images/favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio_framework/assets/images/favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio_framework/assets/images/favicon.ico/manifest.json">
-    <link rel="mask-icon" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio_framework/assets/images/favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/manifest.json">
+    <link rel="mask-icon" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.css" >
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" >
     <script type="text/javascript" src="assets/jquery/jquery.js"></script>

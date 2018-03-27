@@ -215,10 +215,10 @@ class Tools
     final public static function createAppProcess($appname, $temp, $version)
     {
         $base = __DIR__."/../../";
-        include_once $base . "vendor/iumio/iumio-framework/Core/ServerManager/ServerManager.php";
+        include_once $base . "vendor/iumio/iumio-framework/Core/Server/Server.php";
         $temdirbase = $base."vendor/iumio/iumio-framework/Core/Additional/Manager/Module/AppManager/AppTemplate";
         $tempdir = ($temp == "0")? $temdirbase.'/notemplate/{appname}' : $temdirbase.'/template/{appname}';
-        \iumioFramework\Core\Additionnal\Server\ServerManager::copy(
+        \iumioFramework\Core\Server\Server::copy(
             $tempdir,
             $base."/apps/".$appname,
             'directory'
@@ -265,7 +265,7 @@ class Tools
         $f = json_encode($f, JSON_PRETTY_PRINT);
         file_put_contents($base."/elements/config_files/core/apps.json", $f);
         if ($temp == "1") {
-            \iumioFramework\Core\Additionnal\Server\ServerManager::copy(
+            \iumioFramework\Core\Server\Server::copy(
                 $base."/apps/".
                 $appname."/Front/Resources/",
                 $base."/public/components/apps/dev/".strtolower($appname),
