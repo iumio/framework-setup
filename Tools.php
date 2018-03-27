@@ -74,8 +74,13 @@ class Tools
     {
         $f = json_decode(file_get_contents(__DIR__."/../../elements/config_files/core/framework.config.json"));
 
-        if (!isset($f->installation) || $f->installation == null) {
-            return (json_encode(array("code" => 500, "results" => "NOK", "fv" => "Unknow",
+        if (!property_exists($f, 'installation')) {
+            return (json_encode(array("code" => 500, "results" => "NOK", "fv" => "unknow",
+                "msg" => "Property [installation] is undefined in framework.config.json file")));
+        }
+
+        if ($f->installation != null) {
+            return (json_encode(array("code" => 500, "results" => "NOK", "fv" => "unknow",
                 "msg" => "Cannot use iumio installer because you have already one app installed.")));
         }
 
@@ -216,14 +221,14 @@ class Tools
     {
         $base = __DIR__."/../../";
         include_once $base . "vendor/iumio/iumio-framework/Core/Server/Server.php";
-        $temdirbase = $base."vendor/iumio/iumio-framework/Core/Additional/Manager/Module/AppManager/AppTemplate";
+        $temdirbase = $base. "vendor/iumio/iumio-framework/Core/Additional/Manager/Module/App/AppTemplate";
         $tempdir = ($temp == "0")? $temdirbase.'/notemplate/{appname}' : $temdirbase.'/template/{appname}';
         \iumioFramework\Core\Server\Server::copy(
             $tempdir,
-            $base."/apps/".$appname,
+            $base."apps/".$appname,
             'directory'
         );
-        $napp = $base."/apps/".$appname;
+        $napp = $base."apps/".$appname;
 
         // APP
         $f = file_get_contents($napp."/{appname}.php.local");
@@ -237,10 +242,10 @@ class Tools
         file_put_contents($napp."/Routing/default.merc", $str);
 
         // MASTER
-        $f = file_get_contents($napp."/Master/DefaultMaster.php.local");
+        $f = file_get_contents($napp."/Masters/DefaultMaster.php.local");
         $str = str_replace("{appname}", $appname, $f);
-        file_put_contents($napp."/Master/DefaultMaster.php.local", $str);
-        rename($napp."/Master/DefaultMaster.php.local", $napp."/Master/DefaultMaster.php");
+        file_put_contents($napp."/Masters/DefaultMaster.php.local", $str);
+        rename($napp."/Masters/DefaultMaster.php.local", $napp."/Masters/DefaultMaster.php");
 
         // REGISTER TO APP CORE
         $f = json_decode(file_get_contents($base."/elements/config_files/core/apps.json"));
@@ -297,7 +302,6 @@ class Tools
 
 /**
  * Check url parameters
- * @throw \Exception
  */
 if (isset($_REQUEST) && isset($_REQUEST["action"])) {
     if ($_REQUEST["action"] == "phpv") {
