@@ -216,7 +216,6 @@ elseif ($f->installation != null)
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 
                                     <input type="text" class="form-control" id="appname" placeholder="Your application name">
-                                    <div class="input-group-addon">App</div>
                                 </div>
                                 <br>
                                 <p class="text-light bg-primary text-left col-form-label" style="padding-left: 10px" <em><i class="fa fa-question"></i> &nbsp; In order to respect naming rules of iumio Framework, the name of your application will end with "App" keyword.</em></p>
