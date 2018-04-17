@@ -39,6 +39,8 @@ class Tools
         : check if 'composer install' command has be done or set the READ + WRITE + EXECUTION permissions"),
         "vendor/smarty/"               =>  array("Smarty libs not found or have the wrong permissions 
         : check if 'composer install' command has be done or set the READ + WRITE + EXECUTION permissions"),
+        "vendor/php-di/"               =>  array("PHP DI libs not found or have the wrong permissions 
+        : check if 'composer install' command has be done or set the READ + WRITE + EXECUTION permissions"),
     );
 
     public static $php_extensions           =   array(
