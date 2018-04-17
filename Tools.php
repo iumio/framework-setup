@@ -279,7 +279,7 @@ class Tools
             );
         }
 
-        self::addComposerApp($appname);
+        //self::addComposerApp($appname);
 
         self::initialJSON();
         unset($_SESSION['version']);
@@ -305,6 +305,7 @@ class Tools
      */
     final private static function addComposerApp(string $name) {
         $base = __DIR__."/../../";
+
         $composer =  json_decode(file_get_contents($base."composer.json"));
         $composer->autoload->{"psr-4"}->{$name."\\"} = "apps/$name";
         file_put_contents($base."composer.json",
