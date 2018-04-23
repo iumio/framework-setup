@@ -222,8 +222,8 @@ class Tools
     final public static function createAppProcess($appname, $temp, $version)
     {
         $base = __DIR__."/../../";
-        include_once $base . "vendor/iumio/iumio-framework/Core/Server/Server.php";
-        $temdirbase = $base. "vendor/iumio/iumio-framework/Core/Additional/Manager/Module/App/AppTemplate";
+        include_once $base . "vendor/iumio/framework/Core/Server/Server.php";
+        $temdirbase = $base. "vendor/iumio/framework/Core/Additional/Manager/Module/App/AppTemplate";
         $tempdir = ($temp == "0")? $temdirbase.'/notemplate/{appname}' : $temdirbase.'/template/{appname}';
         \iumioFramework\Core\Server\Server::copy(
             $tempdir,
