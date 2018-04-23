@@ -219,7 +219,7 @@ class Tools
      * @return string App process is a successs
      * @throws \Exception
      */
-    final public static function createAppProcess($appname, $temp, $version)
+    final public static function createAppProcess($appname, $temp)
     {
         $base = __DIR__."/../../";
         include_once $base . "vendor/iumio/framework/Core/Server/Server.php";
@@ -281,8 +281,6 @@ class Tools
             );
         }
 
-        //self::addComposerApp($appname);
-
         self::initialJSON();
         unset($_SESSION['version']);
         return ("OK");
@@ -332,12 +330,11 @@ if (isset($_REQUEST) && isset($_REQUEST["action"])) {
     } elseif ($_REQUEST["action"] == "libsr") {
         echo (\iumioFramework\Setup\Requirements\Tools::checkLibrariesRequired());
     } elseif ($_REQUEST["action"] == "createapp") {
-        if (isset($_REQUEST["appname"], $_REQUEST["template"], $_SESSION["version"]) &&
-            $_REQUEST["appname"] != "" && $_REQUEST["template"] != "" && $_SESSION["version"] != "") {
+        if (isset($_REQUEST["appname"], $_REQUEST["template"]) &&
+            $_REQUEST["appname"] != "" && $_REQUEST["template"] != "") {
             echo (\iumioFramework\Setup\Requirements\Tools::createAppProcess(
                 $_REQUEST["appname"],
-                $_REQUEST["template"],
-                $_SESSION["version"]
+                $_REQUEST["template"]
             ));
         } else {
             echo (json_encode(array("code" => 500, "results" => "NOK", "msg" => "Missing required parameter")));
