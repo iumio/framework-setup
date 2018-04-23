@@ -1,10 +1,11 @@
 <?php
 // EXIT IF DOES NOT HAVE ONE APP
 $f = json_decode(file_get_contents(__DIR__."/../../elements/config_files/core/framework.config.json"));
-if (!property_exists($f, 'installation'))
+if (!property_exists($f, 'installation')) {
     exit("Framework Installer :  Property [installation] is undefined in framework.config.json file");
-elseif ($f->installation != null)
+} elseif ($f->installation != null) {
     exit("Framework Installer :  Cannot use the installer because you have already one app installed.");
+}
 ?>
 <!DOCTYPE html>
 <html>

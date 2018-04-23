@@ -27,9 +27,9 @@ session_start();
  */
 class Tools
 {
-    public static $php_accept               = 7;
-    public static $framework_build_accept   = 201738;
-    public static $framework_version_accept = "0.3.8";
+    public static $php_accept               = 7.1;
+    public static $framework_build_accept   = 201760;
+    public static $framework_version_accept = "0.6.0";
     public static $libs                     =   array(
         "public/components/libs/jquery/"       =>  array("jQuery libs not found or have the wrong permissions : 
         check if 'composer install' command has be done or set the READ + WRITE + EXECUTION permissions"),
@@ -305,15 +305,17 @@ class Tools
     /** Adding into composer.json the app class and path
      * @param string $name App name
      */
-    final private static function addComposerApp(string $name) {
+    final private static function addComposerApp(string $name)
+    {
         $base = __DIR__."/../../";
 
         $composer =  json_decode(file_get_contents($base."composer.json"));
         $composer->autoload->{"psr-4"}->{$name."\\"} = "apps/$name";
-        file_put_contents($base."composer.json",
-            json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        file_put_contents(
+            $base."composer.json",
+            json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
+        );
     }
-
 }
 
 
