@@ -16,24 +16,19 @@ if (!property_exists($f, 'installation')) {
     *
     * (c) RAFINA DANY <dany.rafina@iumio.com>
     *
-    * iumio Framework, an iumio component [https://iumio.com]
+    * iumio Framework, an iumio component [https://www.iumio.com]
     *
     * To get more information about licence, please check the licence file
     *
     -->
-    <title>iumio Framework Installer (FI)</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/manifest.json">
-    <link rel="mask-icon" href="//<?= $_SERVER['HTTP_HOST'] ?>/components/libs/iumio-framework/assets/images/favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
+    <title>Framework Installer</title>
+    <link rel="icon" href="//<?= $_SERVER['HTTP_HOST'] ?>/assets/favicon.ico">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.css" >
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" >
     <script type="text/javascript" src="assets/jquery/jquery.js"></script>
     <script type="text/javascript" src="assets/bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="assets/default.js"></script>
     <link rel="stylesheet" href="assets/default.css" >
-    <meta name="theme-color" content="#ffffff">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 </head>
 <body>
@@ -49,7 +44,7 @@ if (!property_exists($f, 'installation')) {
                     <li class="nav-item"><a class="nav-link" id="s2" href="#"><em class="fa fa-file-text-o"></em>Licence <i class="fa fa-check hidden"></i></a></li>
                     <li class="nav-item"><a class="nav-link" id="s3" href="#"><em class="fa fa-list"></em>Requirements <i class="fa fa-check hidden"></i></a></li>
                     <li class="nav-item"><a class="nav-link" id="s4" href="#"><em class="fa fa-terminal"></em>Naming <i class="fa fa-check hidden"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" id="s5" href="#"><em class="fa fa-desktop"></em>iumio Theme <i class="fa fa-check hidden"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" id="s5" href="#"><em class="fa fa-desktop"></em>Theme <i class="fa fa-check hidden"></i></a></li>
                     <li class="nav-item"><a class="nav-link" id="s6" href="#"><em class="fa fa-list-alt"></em>Recap <i class="fa fa-check hidden"></i></a></li>
                     <li class="nav-item"><a class="nav-link" id="s7" href="#"><em class="fa fa-gears"></em>Processing <i class="fa fa-check hidden"></i></a></li>
                     <li class="nav-item"><a class="nav-link" id="s8"href="#"><em class="fa fa-check-circle"></em>End <i class="fa fa-check-circle hidden"></i></a></li>
@@ -60,7 +55,7 @@ if (!property_exists($f, 'installation')) {
             <header class="page-header row justify-center">
                 <div class="col-md-12 col-lg-12">
                     <div class="row">
-                        <h1 class="float-left text-center text-md-left header-text-iumio">iumio Framework - Installation</h1>
+                        <h1 class="float-left text-center text-md-left header-text-iumio">Framework - Installation</h1>
                     </div>
 
 
@@ -78,9 +73,9 @@ if (!property_exists($f, 'installation')) {
                     <section class="row">
                         <div class="col-md-12 col-lg-8">
                             <div class="jumbotron " id="step1">
-                                <h1 class="mb-4">Welcome on iumio Framework Installer (FI)</h1>
+                                <h1 class="mb-4">Welcome on the Framework Installer (FI)</h1>
 
-                                <p class="lead">With this interface, you will install the various components of iumio and your first appplication.</p>
+                                <p class="lead">With this interface, you will install the various components of the framwork and your first appplication.</p>
 
                                 <p>We will guide you so that the installation is carried out correctly.</p>
 
@@ -156,7 +151,7 @@ if (!property_exists($f, 'installation')) {
                                                 <h5 class="mb-1" >PHP Version : <span class="phpversionnum"></span> <span class="isok"></span></h5>
                                                 <small><i class="fa fa-check text-success hidden-step"></i></small>
                                             </div>
-                                            <p class="mb-1">iumio Framework requires version 7.0 or higher to work.</p>
+                                            <p class="mb-1">Framework requires version 7.0 or higher to work.</p>
                                             <div class="error bg-danger text-light hidden-step"></div>
 
                                         </a>
@@ -177,15 +172,6 @@ if (!property_exists($f, 'installation')) {
                                             <p class="mb-1">./web ./elements ./apps folders must have read, write, and execute permissions.</p>
                                             <div class="error bg-danger text-light hidden-step"></div>
                                         </a>
-                                        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start lr">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Download required libraries :  <span class="isok">In progress</span> </h5>
-                                                <small class="text-muted"><i class="fa fa-check text-success hidden-step"></i></small>
-                                            </div>
-                                            <p class="mb-1">The installer must download different libraries in order to work properly. If an error occurs, please check your connectivity first.</p>
-                                            <div class="error bg-danger text-light hidden-step"></div>
-
-                                        </a>-->
                                         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start libsr">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">Verify required librairies :  <span class="isok">In progress</span> </h5>
@@ -230,7 +216,7 @@ if (!property_exists($f, 'installation')) {
                             </div>
 
                             <div class="jumbotron hidden" id="step5">
-                                <h1 class="mb-4">iumio Starter Theme</h1>
+                                <h1 class="mb-4">Starter Theme</h1>
 
                                 <p class="lead">With iumio Framework, you have the possibility to install with your application, a default theme to help you in the development of an interface.</p>
 
@@ -308,9 +294,11 @@ if (!property_exists($f, 'installation')) {
                                         </div>
 
                                         <div class="col-md-10">
-                                            <span class="red-color">iumio Framework Installer is a property of iumio (iumio-team). Do not reproduce !</span>
+                                            <span class="red-color">iumio Framework Installer is a property of iumio</span>
                                             <br>
-                                            <span>More info : <a class="alert-link" onclick="window.open('https://framework.iumio.com', '_blank')">Go to iumio Framework website</a></span>
+                                            <span>More info about iumio : <a class="alert-link" onclick="window.open('https://www.iumio.com', '_blank')">Click here</a></span>
+                                            <br>
+                                            <span>More info about iumio Framework : <a class="alert-link" onclick="window.open('https://framework.iumio.com', '_blank')">Click heree</a></span>
                                         </div>
 
                                     </div>

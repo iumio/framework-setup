@@ -7,7 +7,7 @@
  *  *
  *  * (c) RAFINA DANY <dany.rafina@iumio.com>
  *  *
- *  * iumio Framework, an iumio component [https://iumio.com]
+ *  * iumio Framework, an iumio component [https://wwwLiumio.com]
  *  *
  *  * To get more information about licence, please check the licence file
  *
@@ -299,23 +299,7 @@ class Tools
         $rs = json_encode($f, JSON_PRETTY_PRINT);
         file_put_contents($base."/elements/config_files/core/framework.config.json", $rs);
     }
-
-    /** Adding into composer.json the app class and path
-     * @param string $name App name
-     */
-    final private static function addComposerApp(string $name)
-    {
-        $base = __DIR__."/../../";
-
-        $composer =  json_decode(file_get_contents($base."composer.json"));
-        $composer->autoload->{"psr-4"}->{$name."\\"} = "apps/$name";
-        file_put_contents(
-            $base."composer.json",
-            json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
-        );
-    }
 }
-
 
 /**
  * Check url parameters
