@@ -282,8 +282,8 @@ if (!property_exists($f, 'installation')) {
                                 </div>
                                 <br>
                                 <div class="bg-warning text-light padd-bg" style="padding-left: 20px">
-                                    <p id="betastage">
-                                        <span class="red-color">Warning</span> : This version is in beta stage. Please don't use it for your production projects
+                                    <p id="rcstage">
+                                        <span class="red-color">Warning</span> : This version is in release candidate stage. Please don't use it for your production projects
                                     </p>
                                 </div>
 

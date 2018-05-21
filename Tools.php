@@ -27,9 +27,9 @@ session_start();
  */
 class Tools
 {
-    public static $php_accept               = 7.1;
-    public static $framework_build_accept   = 201760;
-    public static $framework_version_accept = "0.6.0";
+    public static $php_accept               = 7.2;
+    public static $framework_build_accept   = 201770;
+    public static $framework_version_accept = "0.7.0";
     public static $libs                     =   array(
         "public/components/libs/jquery/"       =>  array("jQuery libs not found or have the wrong permissions : 
         check if 'composer install' command has be done or set the READ + WRITE + EXECUTION permissions"),
@@ -64,7 +64,7 @@ class Tools
             return (json_encode(array("code" => 200, "results" => "OK", "phpv" => $phpv)));
         } else {
             return (json_encode(array("code" => 500, "results" => "NOK", "phpv" => $phpv, "msg" =>
-                "The version of PHP is incompatible with iumio Framework. You must have at least version 7.0.0
+                "The version of PHP is incompatible with iumio Framework. You must have at least version 7.2
                  of PHP on your web server.")));
         }
     }
