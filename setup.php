@@ -92,7 +92,7 @@ if (!property_exists($f, 'installation')) {
                                     <h3 style="text-align: center;">MIT License</h3>
                                     <p style="text-align: center;">Version 3, 29 June 2007</p>
 
-                                    <p>Copyright (c) <?= date("Y")?> RAFINA DANY
+                                    <p>Copyright (c) <?= date("Y")?> Rafina Dany dany.rafina@iumio.com><br>
                                         <a href="https://framework.iumio.com/">https://framework.iumio.com/</a></p><p>
                                         Everyone is permitted to copy and distribute verbatim copies
                                         of this license document, but changing it is not allowed.</p>
@@ -151,7 +151,7 @@ if (!property_exists($f, 'installation')) {
                                                 <h5 class="mb-1" >PHP Version : <span class="phpversionnum"></span> <span class="isok"></span></h5>
                                                 <small><i class="fa fa-check text-success hidden-step"></i></small>
                                             </div>
-                                            <p class="mb-1">Framework requires version 7.0 or higher to work.</p>
+                                            <p class="mb-1">Framework requires version 7.2 or higher to work.</p>
                                             <div class="error bg-danger text-light hidden-step"></div>
 
                                         </a>
