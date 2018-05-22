@@ -92,8 +92,10 @@ if (!property_exists($f, 'installation')) {
                                     <h3 style="text-align: center;">MIT License</h3>
                                     <p style="text-align: center;">Version 3, 29 June 2007</p>
 
-                                    <p>Copyright (c) <?= date("Y")?> Rafina Dany dany.rafina@iumio.com><br>
-                                        <a href="https://framework.iumio.com/">https://framework.iumio.com/</a></p><p>
+                                    <p>Copyright (c) <?= date("Y")?> Rafina Dany - dany.rafina@iumio.com<br/>
+                                        <a href="https://framework.iumio.com/">https://framework.iumio.com/</a>
+                                    </p>
+                                    <p>
                                         Everyone is permitted to copy and distribute verbatim copies
                                         of this license document, but changing it is not allowed.</p>
                                     <p>Permission is hereby granted, free of charge, to any person obtaining a copy
