@@ -300,7 +300,7 @@ if (!property_exists($f, 'installation')) {
                                             <br>
                                             <span>More info about iumio : <a class="alert-link" onclick="window.open('https://www.iumio.com', '_blank')">Click here</a></span>
                                             <br>
-                                            <span>More info about iumio Framework : <a class="alert-link" onclick="window.open('https://framework.iumio.com', '_blank')">Click heree</a></span>
+                                            <span>More info about iumio Framework : <a class="alert-link" onclick="window.open('https://framework.iumio.com', '_blank')">Click here</a></span>
                                         </div>
 
                                     </div>
