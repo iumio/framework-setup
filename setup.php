@@ -75,7 +75,7 @@ if (!property_exists($f, 'installation')) {
                             <div class="jumbotron " id="step1">
                                 <h1 class="mb-4">Welcome on the Framework Installer (FI)</h1>
 
-                                <p class="lead">With this interface, you will install the various components of the framwork and your first appplication.</p>
+                                <p class="lead">With this interface, you will install the various components of the framework and your first appplication.</p>
 
                                 <p>We will guide you so that the installation is carried out correctly.</p>
 
