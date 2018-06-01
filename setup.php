@@ -1,11 +1,11 @@
 <?php
-// EXIT IF DOES NOT HAVE ONE APP
-$f = json_decode(file_get_contents(__DIR__."/../../elements/config_files/core/framework.config.json"));
-if (!property_exists($f, 'installation')) {
-    exit("Framework Installer :  Property [installation] is undefined in framework.config.json file");
-} elseif ($f->installation != null) {
-    exit("Framework Installer :  Cannot use the installer because you have already one app installed.");
-}
+    // EXIT IF DOES NOT HAVE ONE APP
+    $f = json_decode(file_get_contents(__DIR__."/../../elements/config_files/core/framework.config.json"));
+    if (!property_exists($f, 'installation')) {
+        exit("Framework Installer :  Property [installation] is undefined in framework.config.json file");
+    } elseif ($f->installation != null) {
+        exit("Framework Installer :  Cannot use the installer because you have already one app installed.");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -284,7 +284,13 @@ if (!property_exists($f, 'installation')) {
                                 </div>
                                 <br>
                                 <div class="bg-warning text-light padd-bg" style="padding-left: 20px">
-                                    <p id="rcstage">
+                                    <p id="alphastage" style="display: none">
+                                        <span class="red-color">Warning</span> : This version is in alpha stage. Please don't use it for your production projects
+                                    </p>
+                                    <p id="betastage" style="display: none">
+                                        <span class="red-color">Warning</span> : This version is in beta stage. Please don't use it for your production projects
+                                    </p>
+                                    <p id="rcstage" style="display: none">
                                         <span class="red-color">Warning</span> : This version is in release candidate stage. Please don't use it for your production projects
                                     </p>
                                 </div>
@@ -305,8 +311,6 @@ if (!property_exists($f, 'installation')) {
 
                                     </div>
                                 </div>
-
-
                                 <br>
                                 <h5>Is this configuration correct for you?</h5>
                                 <br>
