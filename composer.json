@@ -29,7 +29,7 @@
   },
   "require": {
     "php": ">=7.2",
-    "iumio/framework": "0.*",
+    "iumio/framework": "1.*",
     "composer/installers": "1.5.*"
   }
 }
