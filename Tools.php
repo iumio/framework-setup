@@ -1,22 +1,19 @@
 <?php
 
-
 /**
  *
- *  * This is an iumio Framework component
- *  *
- *  * (c) RAFINA DANY <dany.rafina@iumio.com>
- *  *
- *  * iumio Framework, an iumio component [https://wwwLiumio.com]
- *  *
- *  * To get more information about licence, please check the licence file
+ *  This is an iumio Framework component
+ *
+ *  (c) RAFINA DANY <dany.rafina@iumio.com>
+ *
+ *  iumio Framework, an iumio component [https://wwwLiumio.com]
+ *
+ *  To get more information about licence, please check the licence file
  *
  */
 
-
 namespace iumioFramework\Setup\Requirements;
 
-session_start();
 /**
  * Class Tools
  * @package iumioFramework\Setup\Requirements
@@ -74,7 +71,7 @@ class Tools
      */
     final public static function checkFrameworkBuildVersion()
     {
-        $f = json_decode(file_get_contents(__DIR__."/../../elements/config_files/core/framework.config.json"));
+        $f = json_decode(file_get_contents(__DIR__ . "/../../elements/config_files/core/framework.config.json"));
 
         if (!property_exists($f, 'installation')) {
             return (json_encode(array("code" => 500, "results" => "NOK", "fv" => "unknow",
@@ -112,28 +109,36 @@ class Tools
      */
     final public static function checkPermission()
     {
-        $base =  __DIR__."/../../";
-        if (!self::checkIsExecutable($base."elements/") ||
-            !self::checkIsReadable($base."elements/") || !self::checkIsWritable($base."elements/")) {
+        $base =  __DIR__ . "/../../";
+        if (
+            !self::checkIsExecutable($base . "elements/") ||
+            !self::checkIsReadable($base . "elements/") || !self::checkIsWritable($base . "elements/")
+        ) {
             return (json_encode(array("code" => 500, "results" => "NOK", "wr" => "elements", "msg" =>
                 "Folder elements/ does not have correct permission. Must be read, write, executable permission")));
         }
 
-        if (!self::checkIsExecutable($base."apps/") || !self::checkIsReadable($base."apps/") ||
-            !self::checkIsWritable($base."apps/")) {
+        if (
+            !self::checkIsExecutable($base . "apps/") || !self::checkIsReadable($base . "apps/") ||
+            !self::checkIsWritable($base . "apps/")
+        ) {
             return (json_encode(array("code" => 500, "results" => "NOK", "wr" => "apps/", "msg" =>
                 "Folder apps/ does not have correct permission. Must be read, write, executable permission")));
         }
 
-        if (!self::checkIsExecutable($base."vendor/") || !self::checkIsReadable($base."vendor/") ||
-            !self::checkIsWritable($base."vendor/")) {
+        if (
+            !self::checkIsExecutable($base . "vendor/") || !self::checkIsReadable($base . "vendor/") ||
+            !self::checkIsWritable($base . "vendor/")
+        ) {
             return (json_encode(array("code" => 500, "results" => "NOK", "wr" => "vendor/", "msg" =>
                 "Folder vendor/ does not have correct permission. Must be read, write, executable permission")));
         }
 
-        if (!self::checkIsExecutable($base."public/components/libs") ||
-            !self::checkIsReadable($base."public/components/libs") ||
-            !self::checkIsWritable($base."public/components/libs")) {
+        if (
+            !self::checkIsExecutable($base . "public/components/libs") ||
+            !self::checkIsReadable($base . "public/components/libs") ||
+            !self::checkIsWritable($base . "public/components/libs")
+        ) {
             return (json_encode(array("code" => 500, "results" => "NOK", "wr" => "public/components/libs/", "msg" =>
                 "Folder public/components/libs/ does not have correct permission. 
                 Must be read, write, executable permissions")));
@@ -166,10 +171,12 @@ class Tools
      */
     final public static function checkLibrariesRequired()
     {
-        $base =  __DIR__."/../../";
+        $base =  __DIR__ . "/../../";
         foreach (self::$libs as $lib => $val) {
-            if (!is_dir($base.$lib) || !self::checkIsReadable($base.$lib) ||
-                !self::checkIsWritable($base.$lib) || self::isDirEmpty($base.$lib)) {
+            if (
+                !is_dir($base . $lib) || !self::checkIsReadable($base . $lib) ||
+                !self::checkIsWritable($base . $lib) || self::isDirEmpty($base . $lib)
+            ) {
                 return (json_encode(array("code" => 500, "results" => "NOK", "libsr" => $lib, "msg" => $val)));
             }
         }
@@ -221,36 +228,36 @@ class Tools
      */
     final public static function createAppProcess($appname, $temp)
     {
-        $base = __DIR__."/../../";
+        $base = __DIR__ . "/../../";
         include_once $base . "vendor/iumio/framework/Core/Server/Server.php";
-        $temdirbase = $base. "vendor/iumio/framework/Core/Additional/Manager/Module/App/AppTemplate";
-        $tempdir = ($temp == "0")? $temdirbase.'/notemplate/{appname}' : $temdirbase.'/template/{appname}';
+        $temdirbase = $base . "vendor/iumio/framework/Core/Additional/Manager/Module/App/AppTemplate";
+        $tempdir = ($temp == "0") ? $temdirbase . '/notemplate/{appname}' : $temdirbase . '/template/{appname}';
         \iumioFramework\Core\Server\Server::copy(
             $tempdir,
-            $base."apps/".$appname,
+            $base . "apps/" . $appname,
             'directory'
         );
-        $napp = $base."apps/".$appname;
+        $napp = $base . "apps/" . $appname;
 
         // APP
-        $f = file_get_contents($napp."/{appname}.php.local");
+        $f = file_get_contents($napp . "/{appname}.php.local");
         $str = str_replace("{appname}", $appname, $f);
-        file_put_contents($napp."/{appname}.php.local", $str);
-        rename($napp."/{appname}.php.local", $napp."/$appname.php");
+        file_put_contents($napp . "/{appname}.php.local", $str);
+        rename($napp . "/{appname}.php.local", $napp . "/$appname.php");
 
         // RT
-        $f = file_get_contents($napp."/Routing/default.merc");
+        $f = file_get_contents($napp . "/Routing/default.merc");
         $str = str_replace("{appname}", $appname, $f);
-        file_put_contents($napp."/Routing/default.merc", $str);
+        file_put_contents($napp . "/Routing/default.merc", $str);
 
         // MASTER
-        $f = file_get_contents($napp."/Masters/DefaultMaster.php.local");
+        $f = file_get_contents($napp . "/Masters/DefaultMaster.php.local");
         $str = str_replace("{appname}", $appname, $f);
-        file_put_contents($napp."/Masters/DefaultMaster.php.local", $str);
-        rename($napp."/Masters/DefaultMaster.php.local", $napp."/Masters/DefaultMaster.php");
+        file_put_contents($napp . "/Masters/DefaultMaster.php.local", $str);
+        rename($napp . "/Masters/DefaultMaster.php.local", $napp . "/Masters/DefaultMaster.php");
 
         // REGISTER TO APP CORE
-        $f = json_decode(file_get_contents($base."/elements/config_files/core/apps.json"));
+        $f = json_decode(file_get_contents($base . "/elements/config_files/core/apps.json"));
         $lastapp = 0;
 
         if (!is_object($f)) {
@@ -265,17 +272,17 @@ class Tools
         $f->$lastapp->name = $appname;
         $f->$lastapp->enabled = "yes";
         $f->$lastapp->prefix = "";
-        $f->$lastapp->class = "\\".$appname."\\".$appname;
+        $f->$lastapp->class = "\\" . $appname . "\\" . $appname;
         $ndate = new \DateTime('UTC');
         $f->$lastapp->creation = $ndate;
         $f->$lastapp->update = $ndate;
         $f = json_encode($f, JSON_PRETTY_PRINT);
-        file_put_contents($base."/elements/config_files/core/apps.json", $f);
+        file_put_contents($base . "/elements/config_files/core/apps.json", $f);
         if ($temp == "1") {
             \iumioFramework\Core\Server\Server::copy(
-                $base."/apps/".
-                $appname."/Front/Resources/",
-                $base."/public/components/apps/dev/".strtolower($appname),
+                $base . "/apps/" .
+                $appname . "/Front/Resources/",
+                $base . "/public/components/apps/dev/" . strtolower($appname),
                 'directory',
                 true
             );
@@ -291,13 +298,13 @@ class Tools
      */
     final protected static function initialJSON()
     {
-        $base = __DIR__."/../../";
-        $f = json_decode(file_get_contents($base."/elements/config_files/core/framework.config.json"));
+        $base = __DIR__ . "/../../";
+        $f = json_decode(file_get_contents($base . "/elements/config_files/core/framework.config.json"));
         $f->installation = new \DateTime();
         $f->location = realpath($base);
         $f->default_env = "dev";
         $rs = json_encode($f, JSON_PRETTY_PRINT);
-        file_put_contents($base."/elements/config_files/core/framework.config.json", $rs);
+        file_put_contents($base . "/elements/config_files/core/framework.config.json", $rs);
     }
 }
 
@@ -314,8 +321,10 @@ if (isset($_REQUEST) && isset($_REQUEST["action"])) {
     } elseif ($_REQUEST["action"] == "libsr") {
         echo (\iumioFramework\Setup\Requirements\Tools::checkLibrariesRequired());
     } elseif ($_REQUEST["action"] == "createapp") {
-        if (isset($_REQUEST["appname"], $_REQUEST["template"]) &&
-            $_REQUEST["appname"] != "" && $_REQUEST["template"] != "") {
+        if (
+            isset($_REQUEST["appname"], $_REQUEST["template"]) &&
+            $_REQUEST["appname"] != "" && $_REQUEST["template"] != ""
+        ) {
             echo (\iumioFramework\Setup\Requirements\Tools::createAppProcess(
                 $_REQUEST["appname"],
                 $_REQUEST["template"]

@@ -11,7 +11,7 @@ iumio Framework Installer (FI)
 Description
 ------------
 
-This is the installer of iumio Framework instance (Compatibility with Framework SE and Framework API)
+This is the installer of iumio Framework instance
 
 
 Installation
@@ -36,7 +36,7 @@ We need any help to continue the framework development and create a new communit
 About Us
 --------
 
-iumio Framework is a product by [iumio][5], created by [RAFINA Dany][6] and co-founded by [HURON Kevin][7]
+iumio Framework is a product by [iumio][5], created by [RAFINA Dany][6] and co-founded by HURON Kevin
 
 [1]: https://framework.iumio.com
 [2]: https://learn.framework.iumio.com/docs/installation/install-iumio-framework/
@@ -44,6 +44,5 @@ iumio Framework is a product by [iumio][5], created by [RAFINA Dany][6] and co-f
 [4]: https://learn.framework.iumio.com
 [5]: https://www.iumio.com
 [6]: https://www.linkedin.com/in/dany-rafina-672041b3/
-[7]: http://kevinhuron.fr/
 
 <!--INITIALIUMIOFW-->
